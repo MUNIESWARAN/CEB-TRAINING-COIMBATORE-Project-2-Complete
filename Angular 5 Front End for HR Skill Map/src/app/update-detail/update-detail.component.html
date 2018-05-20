@@ -1,0 +1,62 @@
+
+
+
+<br/>
+<div *ngIf="employee">
+
+  <h2>{{ employee.firstName | uppercase }} Details</h2>
+
+  <div><span>Employee id: </span>{{employee.employeeId}}</div>
+  
+  <form>
+    
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input [(ngModel)]="employee.firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+    </div>
+    
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input [(ngModel)]="employee.lastName" placeholder="Last Name" name="lastName" class="form-control" id="lastName">
+    </div>
+    
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input [(ngModel)]="employee.gender" placeholder="Gender" name="gender" class="form-control" id="gender">
+    </div>
+      
+    <div class="form-group">
+      <label for="dateOfBirth">DateOfBirth:</label>
+      <input [(ngModel)]="employee.dateOfBirth" placeholder="dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth">
+    </div>
+    
+    <div class="form-group">
+      <label for="commAddress">Communication Address:</label>
+      <input [(ngModel)]="employee.commAddress" placeholder="Communication Address" name="commAddress" class="form-control" id="commAddress">
+    </div>
+        
+    <div class="form-group">
+      <label for="emailid">Email address:</label>
+      <input type="email" [(ngModel)]="employee.emailid" placeholder="Email" name="emailid" class="form-control" id="emailid">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" [(ngModel)]="employee.password" placeholder="password" name="password" class="form-control" id="password">
+    </div>
+
+      <div class="form-group">
+    <label for="contact">Contact:</label>
+    <input [(ngModel)]="employee.contact" placeholder="contact number" name="contact" class="form-control" id="contact">
+  </div>
+
+  <div class="form-group">
+    <label for="userType">Designation:</label>
+    <input [(ngModel)]="employee.userType" placeholder="Designation " name="userType" class="form-control" id="userType">
+  </div>
+
+
+  <button class="btn btn-success" (click)="editEmployee()">UPDATE EMPLOYEE</button>
+</form>
+
+</div>

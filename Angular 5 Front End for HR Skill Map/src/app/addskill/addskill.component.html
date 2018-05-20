@@ -1,0 +1,119 @@
+<p> Welcome to Search Page   </p>
+   
+    <form>
+         <div class="form-group">
+             <label for="employeeId">Search By Employee ID:</label>
+             <input [(ngModel)]="employeeId" placeholder="Enter Employee Id" name="employeeId" class="form-control" id="employeeId">
+   
+           </div>
+           <button class="btn btn-success" (click)="getEmployee(employeeId)">Search EMPLOYEE</button>
+   
+     
+     </form>
+   
+     <div *ngIf="employee">
+        <h3>{{ employee.firstName | uppercase }} Details</h3>
+        <div><span>Employee id: </span>{{employee.employeeId}}</div>
+       
+        <table border="1">
+            <thead>
+              <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Communication Address</th>
+                <th>Email Id</th>
+                <th>contact</th>
+                <th>Designation</th>
+              </tr>
+          </thead>
+          <tbody><tr>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+            <td>{{employee.commAddress}}</td>
+            <td>{{employee.emailid}}</td>
+            <td>{{employee.contact}}</td>
+            <td>{{employee.userType}}</td>
+          </tr>
+          </tbody>
+          </table>
+          <button class="btn btn-success" (click)="loadEmployeeSkills(employee.employeeId)">UPDATE Update Skill</button>
+    <br/>
+
+    <br/>
+
+
+    
+
+  <br/>
+<div *ngIf="showSubForm">
+
+  <h2>{{ employee.firstName | uppercase }} Skill Details</h2>
+
+  <div><span>Employee id: </span>{{employee.employeeId}}</div>
+  
+  <form >
+    <h3>Your updated Skills are listed below:</h3>
+    
+    <div class="form-group">
+      <label for="skills.skillsId"></label>
+      <input type="hidden" [(ngModel)]="skills.skillsId" placeholder="" name="skillsId" class="form-control" id="skillsId">
+    </div>
+
+    <div class="form-group">
+      <label for="skills.noOfStudentsCertified">No Of Students Certified:</label>
+      <input [(ngModel)]="skills.noOfStudentsCertified" placeholder="No of students Certified" name="noOfStudentsCertified" class="form-control" id="noOfStudentsCertified">
+    </div>
+    
+    <div class="form-group">
+      <label for="noOfFactCleard">No of FACT Cleared:</label>
+      <input [(ngModel)]="skills.noOfFactCleard" placeholder="No of FACT Cleared" name="noOfFactCleard" class="form-control" id="noOfFactCleard">
+    </div>
+    
+    <div class="form-group">
+      <label for="noOfStudentsPlaced">No of Students Placed:</label>
+      <input [(ngModel)]="skills.noOfStudentsPlaced" placeholder="No of Students Placed" name="noOfStudentsPlaced" class="form-control" id="noOfStudentsPlaced">
+    </div>
+    
+    <div class="form-group">
+      <label for="yearsOfExperiance">Years of Experience:</label>
+      <input [(ngModel)]="skills.yearsOfExperiance" placeholder="Years of Experiance" name="yearsOfExperiance" class="form-control" id="yearsOfExperiance">
+    </div>
+    
+    <div class="form-group">
+      <label for="highestQualifaction">Highest Qualification:</label>
+      <input [(ngModel)]="skills.highestQualifaction" placeholder="Highest Qualification" name="highestQualifaction" class="form-control" id="highestQualifaction">
+    </div>
+    
+    <div class="form-group">
+      <label for="techSkill1">Technical Skills 1:</label>
+      <input [(ngModel)]="skills.techSkill1" placeholder="Technical Skills" name="techSkill1" class="form-control" id="techSkill1">
+    </div>
+    
+    <div class="form-group">
+      <label for="techSkill2">Technical Skills 2:</label>
+      <input [(ngModel)]="skills.techSkill2" placeholder="Technical Skills" name="techSkill2" class="form-control" id="techSkill2">
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="vendor1">Vendor Certification 1:</label>
+      <input [(ngModel)]="skills.vendor1" placeholder="Vendor Certification 1" name="vendor1" class="form-control" id="vendor1">
+    </div>
+
+    <div class="form-group">
+      <label for="vendor2">Vendor Certification 2:</label>
+      <input [(ngModel)]="skills.vendor2" placeholder="Vendor Certification 2" name="vendor2" class="form-control" id="vendor2">
+    </div>
+
+      <button class="btn btn-success" (click)="saveSkills()">UPDATE Skills</button> 
+    </form>
+
+  
+  
+  </div>
+
+</div>

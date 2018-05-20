@@ -1,0 +1,52 @@
+<p>
+ 
+</p>
+<div>
+  <div class="row">
+
+  <div class="col-md-6">
+  <h2> List Of Employees</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>Communication Address</th>
+      <th>Email Id</th>
+      <th>contact</th>
+      <th>Designation</th>
+    </tr>
+  </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeList">
+            <td class="hidden"></td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+            <td>{{employee.commAddress}}</td>
+            <td>{{employee.emailid}}</td>
+            <td>{{employee.contact}}</td>
+            <td>{{employee.userType}}</td>
+            <td><button class="btn btn-warning"  (click)="updateEmployee(employee)"> Update Emoloyee</button></td>
+            <td><button class="btn btn-danger"  (click)="deleteEmployee(employee)"> Delete Emoloyee</button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+  
+
+  <div class="row">
+      <div class="col-md-6">
+      <app-update-detail [employee]="selectedEmployee"></app-update-detail>
+      </div>
+  </div>
+</div>
+ 
+  

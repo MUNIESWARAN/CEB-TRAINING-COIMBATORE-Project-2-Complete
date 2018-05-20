@@ -1,0 +1,17 @@
+<p>
+  log-service works!
+</p>
+
+ 
+
+<div>
+    <h2>Messages</h2>
+    <button class="clear" (click)="logService.clear()">clear</button>
+    
+    <div *ngFor="let log of messages">
+      {{log}}
+    </div>
+
+
+  </div>
+ 
